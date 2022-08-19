@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="daoTests.ComplaintDaoTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-08-19T00:04:58" hostname="JAMES-PC" time="0.298">
+  <properties/>
+  <testcase name="create_complaint_test()" classname="daoTests.ComplaintDaoTest" time="0.298"/>
+  <system-out><![CDATA[org.postgresql.jdbc4.Jdbc4Connection@4b45dcb8
+org.postgresql.jdbc4.Jdbc4Connection@52d645b1
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
