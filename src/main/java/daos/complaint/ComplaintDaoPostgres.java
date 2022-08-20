@@ -18,9 +18,6 @@ public class ComplaintDaoPostgres implements ComplaintDao{
         try (Connection conn = ConnectUtil.getConnection()){
             String sql = "insert into complaints values (?,?,?,?)";
 
-//            string for testing
-//            String sql = "insert into complainttest values (?,?,?,?)";
-
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setInt(1, complaint.getComplaintId());
             ps.setString(2, complaint.getFirstName());
@@ -28,6 +25,7 @@ public class ComplaintDaoPostgres implements ComplaintDao{
             ps.setString(4, complaint.getDescription());
 
             ps.execute();
+            conn.close();
 
             return 201;
 
