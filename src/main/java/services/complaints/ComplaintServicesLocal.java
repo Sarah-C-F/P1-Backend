@@ -14,6 +14,10 @@ public class ComplaintServicesLocal implements ComplaintServices{
 
     @Override
     public int createComplaint(Complaint complaint) {
-        return this.complaintDao.createComplaint(complaint);
+        int saveComplaint = this.complaintDao.createComplaint(complaint);
+        System.out.println(saveComplaint);
+        return saveComplaint;
+
+
     }
 }

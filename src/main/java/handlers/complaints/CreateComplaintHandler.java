@@ -14,6 +14,7 @@ public class CreateComplaintHandler implements Handler {
         String json = ctx.body();
         Gson gson = new Gson();
         Complaint complaint = gson.fromJson(json, Complaint.class);
+
         int saveComplaint = App.complaintService.createComplaint(complaint);
 
         if (saveComplaint == 201){

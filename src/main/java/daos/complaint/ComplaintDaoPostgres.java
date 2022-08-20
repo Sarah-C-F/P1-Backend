@@ -8,7 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class ComplaintDaoPostgres implements ComplaintDao{
-    private int idMaker = 2;
+    private int idMaker = 200;
 
     @Override
     public int createComplaint(Complaint complaint) {

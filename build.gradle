@@ -1,3 +1,4 @@
+
 plugins {
     id 'java'
     id "org.sonarqube" version "3.4.0.2513"
@@ -29,4 +30,5 @@ sonarqube {
         property "sonar.organization", "sarah-c-f"
         property "sonar.host.url", "https://sonarcloud.io"
     }
+
 }
