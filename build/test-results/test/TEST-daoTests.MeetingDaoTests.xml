@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="daoTests.MeetingDaoTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-08-20T16:04:05" hostname="JAMES-PC" time="0.244">
+<testsuite name="daoTests.MeetingDaoTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-08-20T20:47:10" hostname="JAMES-PC" time="0.246">
   <properties/>
-  <testcase name="get_all_meetings_test_standard()" classname="daoTests.MeetingDaoTests" time="0.244"/>
+  <testcase name="get_all_meetings_test_standard()" classname="daoTests.MeetingDaoTests" time="0.246"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
