@@ -21,8 +21,12 @@ public class MeetingDaoTests {
     static void connect() {
         try (Connection conn = ConnectUtil.getConnection()) {
             String sql = "delete from complaints; delete from meetings where meeting_id < 100; insert into meetings (meeting_id, meeting_date, topic) values (2, '00/00/0000', 'NOT A MEETING')";
-            PreparedStatement ps = conn.prepareStatement(sql);
-            ps.execute();
+            PreparedStatement ps;
+            if (conn != null) {
+                ps = conn.prepareStatement(sql);
+                ps.execute();
+            }
+
 
         } catch (SQLException e) {
             e.printStackTrace();

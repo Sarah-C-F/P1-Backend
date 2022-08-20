@@ -21,8 +21,12 @@ public class ComplaintDaoTests {
     static void connect() {
         try(Connection conn = ConnectUtil.getConnection()) {
             String sql = "delete from complaints";
-            PreparedStatement ps = conn.prepareStatement(sql);
-            ps.execute();
+            PreparedStatement ps;
+            if (conn != null) {
+                ps = conn.prepareStatement(sql);
+                ps.execute();
+            }
+
 
         }catch (SQLException e) {
             e.printStackTrace();
