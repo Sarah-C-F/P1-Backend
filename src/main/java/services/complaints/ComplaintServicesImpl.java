@@ -1,14 +1,13 @@
 package services.complaints;
 
 import daos.complaint.ComplaintDao;
-import daos.complaint.ComplaintDaoPostgres;
 import entities.Complaint;
 
-public class ComplaintServicesLocal implements ComplaintServices{
+public class ComplaintServicesImpl implements ComplaintServices{
 
     private ComplaintDao complaintDao;
 
-    public ComplaintServicesLocal(ComplaintDao complaintDao) {
+    public ComplaintServicesImpl(ComplaintDao complaintDao) {
         this.complaintDao = complaintDao;
     }
 

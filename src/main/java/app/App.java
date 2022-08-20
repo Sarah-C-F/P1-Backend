@@ -4,10 +4,10 @@ import daos.complaint.ComplaintDaoPostgres;
 import handlers.complaints.CreateComplaintHandler;
 import io.javalin.Javalin;
 import services.complaints.ComplaintServices;
-import services.complaints.ComplaintServicesLocal;
+import services.complaints.ComplaintServicesImpl;
 
 public class App {
-    public static ComplaintServices complaintService = new ComplaintServicesLocal(new ComplaintDaoPostgres());
+    public static ComplaintServices complaintService = new ComplaintServicesImpl(new ComplaintDaoPostgres());
 
     public static void main(String[] args){
         //add Javalin
