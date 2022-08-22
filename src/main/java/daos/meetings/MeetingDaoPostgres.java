@@ -21,8 +21,9 @@ public class MeetingDaoPostgres implements MeetingDao {
             while (rs.next()) {
                 Meeting meeting = new Meeting();
                 meeting.setMeetingId(rs.getInt("meeting_id"));
-                meeting.setMeetingDate("meeting_date");
-                meeting.setTopic("topic");
+                meeting.setMeetMonth(rs.getString("meeting_month"));
+                meeting.setMeetDay(rs.getInt("meeting_day"));
+                meeting.setTopic(rs.getString("topic"));
                 meetingList.add(meeting);
             }
 
