@@ -2,8 +2,7 @@ package entities;
 
 public class Meeting {
     int meetingId;
-    MeetMonth meetMonth;
-    int meetDay;
+    long meetingDate;
     String topic;
 
 
@@ -15,21 +14,12 @@ public class Meeting {
         this.meetingId = meetingId;
     }
 
-    public MeetMonth getMeetMonth() {
-        return meetMonth;
+    public long getMeetingDate() {
+        return meetingDate;
     }
 
-    public void setMeetMonth(String month) {
-        month = month.toUpperCase();
-        this.meetMonth = MeetMonth.valueOf(month);
-    }
-
-    public int getMeetDay() {
-        return meetDay;
-    }
-
-    public void setMeetDay(int meetDay) {
-        this.meetDay = meetDay;
+    public void setMeetingDate(long meetingDate) {
+        this.meetingDate = meetingDate;
     }
 
     public String getTopic() {
@@ -44,9 +34,9 @@ public class Meeting {
     public String toString() {
         return "Meeting{" +
                 "meetingId=" + meetingId +
-                ", meetMonth=" + meetMonth +
-                ", meetDay=" + meetDay +
+                ", meetingDate=" + meetingDate +
                 ", topic='" + topic + '\'' +
                 '}';
     }
+
 }

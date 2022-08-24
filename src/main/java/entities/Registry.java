@@ -12,6 +12,23 @@ public class Registry {
     String login;
     String logPass;
 
+    public Registry() {
+    }
+
+    public Registry(String login, String logPass) {
+        this.login = login;
+        this.logPass = logPass;
+    }
+
+    public Registry(int registryId, String firstName, String lastName, Role accessRole, String login, String logPass) {
+        this.registryId = registryId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.accessRole = accessRole;
+        this.login = login;
+        this.logPass = logPass;
+    }
+
     public Registry(String firstName, String lastName, String login, String logPass) {
         this.firstName = firstName;
         this.lastName = lastName;
