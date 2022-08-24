@@ -14,6 +14,8 @@ public class GetPersonByLoginHandler implements Handler {
         String json = ctx.body();
         Gson gson = new Gson();
         Registry logCheck = gson.fromJson(json, Registry.class);
+        System.out.println(logCheck.getLogin());
+        System.out.println(logCheck.getLogPass());
 
         boolean accurate = App.registryServices.getPersonByLogin(logCheck.getLogin(), logCheck.getLogPass());
 

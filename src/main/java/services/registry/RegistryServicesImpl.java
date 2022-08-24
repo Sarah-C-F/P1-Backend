@@ -13,6 +13,7 @@ public class RegistryServicesImpl implements RegistryServices{
 
     @Override
     public boolean getPersonByLogin(String login, String pass) {
+        System.out.println(login + pass);
         boolean accurate = this.registryDao.getPersonByLogin(login, pass);
         return accurate;
 
