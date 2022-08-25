@@ -1,6 +1,8 @@
 package services.registry;
 
+import entities.Registry;
+
 public interface RegistryServices {
 
-    boolean getPersonByLogin (String login, String log_pass);
+    Registry getPersonByLogin (String login, String log_pass);
 }

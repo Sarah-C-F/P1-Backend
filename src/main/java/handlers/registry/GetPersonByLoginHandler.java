@@ -17,11 +17,15 @@ public class GetPersonByLoginHandler implements Handler {
         System.out.println(logCheck.getLogin());
         System.out.println(logCheck.getLogPass());
 
-        boolean accurate = App.registryServices.getPersonByLogin(logCheck.getLogin(), logCheck.getLogPass());
-
-        if (accurate) {
-            ctx.status(200);
-        } else {
+        Registry person2 = App.registryServices.getPersonByLogin(logCheck.getLogin(), logCheck.getLogPass());
+        String personString = gson.toJson(person2);
+        if (person2.getRegistryId()==202) {
+            ctx.status(202);
+            ctx.result(personString);
+        } else if (person2.getRegistryId()==302) {
+            ctx.status(302);
+            ctx.result(personString);
+        }else{
             ctx.status(401);
             ctx.result("Unauthorized access");
         }

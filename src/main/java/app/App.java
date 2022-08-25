@@ -44,7 +44,7 @@ public class App {
         app.get("/meetings", getAllMeetingsHandler);
 
         //Call Registry Handlers
-        app.get("/registry", getPersonByLoginHandler);
+        app.post("/registry", getPersonByLoginHandler);
 
         //start app
         app.start();

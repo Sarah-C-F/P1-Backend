@@ -5,5 +5,5 @@ import io.javalin.http.Handler;
 
 public interface RegistryDao{
 
-    boolean getPersonByLogin(String login, String pass);
+    Registry getPersonByLogin(String login, String pass);
 }
