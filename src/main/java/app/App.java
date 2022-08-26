@@ -46,7 +46,7 @@ public class App {
         //Call Complaint Handlers
         app.post("/complaints", createComplaintHandler);
         app.get("/complaints", getAllComplaintsHandler);
-        app.patch("/complaints/{complaintID}", updateComplaintByIdHandler);
+        app.patch("/complaints/{complaintId}", updateComplaintByIdHandler);
 
         //Call Meeting Handlers
         app.get("/meetings", getAllMeetingsHandler);
