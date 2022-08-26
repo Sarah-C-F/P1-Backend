@@ -5,12 +5,12 @@ import java.util.Locale;
 import static entities.Role.UNCHECKED;
 
 public class Registry {
-    int registryId;
-    String firstName;
-    String lastName;
-    Role accessRole = UNCHECKED;
-    String login;
-    String logPass;
+    private int registryId;
+    private String firstName;
+    private String lastName;
+    private Role accessRole = UNCHECKED;
+    private String login;
+    private String logPass;
 
     public Registry() {
     }

@@ -1,13 +1,11 @@
 package daos.complaint;
 
 import entities.Complaint;
-import entities.Meeting;
+import entities.Level;
 import util.ConnectUtil;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.lang.reflect.Type;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class ComplaintDaoPostgres implements ComplaintDao{
@@ -47,7 +45,7 @@ public class ComplaintDaoPostgres implements ComplaintDao{
             PreparedStatement ps = conn.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
 
-            ArrayList<Complaint> complaintsList = new ArrayList<Complaint>();
+            ArrayList<Complaint> complaintsList = new ArrayList<>();
 
             while (rs.next()) {
                 Complaint complaint = new Complaint();
@@ -68,6 +66,28 @@ public class ComplaintDaoPostgres implements ComplaintDao{
 
         return null;
     }
+
+    @Override
+    public int updateComplaintById(int complaintId, Level priority, int meeting) {
+        try (Connection conn = ConnectUtil.getConnection()){
+            String sql = "update complaints set priority = ?, meeting = ? where complaint_id = ?";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setObject(1, priority, Types.OTHER);
+            ps.setInt(2, meeting);
+            ps.setInt(3, complaintId);
+
+            ps.execute();
+            conn.close();
+
+            return 200;
+
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return 422;
+    }
+
 
 }
 

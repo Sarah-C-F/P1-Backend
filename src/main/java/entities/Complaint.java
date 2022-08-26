@@ -1,14 +1,19 @@
 package entities;
 
 public class Complaint {
-    int complaintId;
-    String firstName;
-    String lastName;
-    String description;
-    Level priority = Level.UNASSIGNED;
-    int meeting = 0;
+    private int complaintId;
+    private String firstName;
+    private String lastName;
+    private String description;
+    private Level priority = Level.UNASSIGNED;
+    private int meeting = 0;
 
     public Complaint() {
+    }
+
+    public Complaint(String givePriority, int meeting) {
+        this.priority = Level.valueOf(givePriority);
+        this.meeting = meeting;
     }
 
     public Complaint(String firstName, String lastName, String description) {

@@ -1,9 +1,9 @@
 package entities;
 
 public class Meeting {
-    int meetingId;
-    long meetingDate;
-    String topic;
+    private int meetingId;
+    private long meetingDate;
+    private String topic;
 
     public Meeting() {
     }
