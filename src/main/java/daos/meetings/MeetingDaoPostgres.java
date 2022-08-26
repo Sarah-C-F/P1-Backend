@@ -7,9 +7,10 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class MeetingDaoPostgres implements MeetingDao {
-
+    private int idMaker = 100;
     @Override
     public ArrayList<Meeting> getAllMeetings() {
+
         try (Connection conn = ConnectUtil.getConnection()){
             String sql = "select * from meetings where meeting_id > 0";
 
@@ -25,12 +26,36 @@ public class MeetingDaoPostgres implements MeetingDao {
                 meeting.setTopic(rs.getString("topic"));
                 meetingList.add(meeting);
             }
-
+            conn.close();
             return meetingList;
+
         }catch (SQLException e){
             e.printStackTrace();
         }
 
         return null;
+    }
+
+    @Override
+    public int createMeeting(Meeting meeting) {
+        meeting.setMeetingId(idMaker);
+        idMaker++;
+        try (Connection conn = ConnectUtil.getConnection()){
+            String sql = "insert into meetings (meeting_id, meeting_date, topic) values (?, ?. ?)";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1, meeting.getMeetingId());
+            ps.setLong(2, meeting.getMeetingDate());
+            ps.setString(3, meeting.getTopic());
+
+            ps.execute();
+            conn.close();
+
+            return 200;
+
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return 422;
     }
 }

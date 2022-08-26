@@ -5,6 +5,7 @@ import daos.meetings.MeetingDao;
 import daos.meetings.MeetingDaoPostgres;
 import daos.registry.RegistryDaoPostgres;
 import handlers.complaints.CreateComplaintHandler;
+import handlers.meetings.CreateMeetingHandler;
 import handlers.meetings.GetAllMeetingsHandler;
 import handlers.registry.GetPersonByLoginHandler;
 import io.javalin.Javalin;
@@ -33,6 +34,7 @@ public class App {
 
         //Meeting Handlers
         GetAllMeetingsHandler getAllMeetingsHandler = new GetAllMeetingsHandler();
+        CreateMeetingHandler createMeetingHandler = new CreateMeetingHandler();
 
         //Registry Handlers
         GetPersonByLoginHandler getPersonByLoginHandler = new GetPersonByLoginHandler();
@@ -42,6 +44,7 @@ public class App {
 
         //Call Meeting Handlers
         app.get("/meetings", getAllMeetingsHandler);
+        app.post("/meetings", createMeetingHandler);
 
         //Call Registry Handlers
         app.post("/registry", getPersonByLoginHandler);

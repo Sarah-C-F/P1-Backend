@@ -7,4 +7,5 @@ import java.util.ArrayList;
 public interface MeetingServices {
 
     ArrayList<Meeting> getAllMeetings();
+    int createMeeting(Meeting meeting);
 }
