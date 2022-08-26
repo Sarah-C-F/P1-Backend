@@ -20,7 +20,7 @@ public class MeetingDaoTests {
     @BeforeAll
     static void connect() {
         try (Connection conn = ConnectUtil.getConnection()) {
-            String sql = "delete from complaints; delete from meetings where meeting_id < 100; insert into meetings (meeting_id, meeting_date, topic) values (2, '00/00/0000', 'NOT A MEETING')";
+            String sql = "delete from complaints; delete from meetings";
             PreparedStatement ps;
             if (conn != null) {
                 ps = conn.prepareStatement(sql);
@@ -35,6 +35,15 @@ public class MeetingDaoTests {
 
     @Test
     @Order(1)
+    void create_meeting_test_standard () {
+        Meeting testMeeting = new Meeting(0,1661523705, "create_meeting_test_standard");
+        int result = meetingDao.createMeeting(testMeeting);
+
+        Assertions.assertEquals(200, result);
+    }
+
+    @Test
+    @Order(2)
     void get_all_meetings_test_standard () {
         ArrayList<Meeting> test = meetingDao.getAllMeetings();
 
