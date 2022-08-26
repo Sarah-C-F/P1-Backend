@@ -5,6 +5,14 @@ public class Meeting {
     long meetingDate;
     String topic;
 
+    public Meeting() {
+    }
+
+    public Meeting(int meetingId, long meetingDate, String topic) {
+        this.meetingId = meetingId;
+        this.meetingDate = meetingDate;
+        this.topic = topic;
+    }
 
     public int getMeetingId() {
         return meetingId;

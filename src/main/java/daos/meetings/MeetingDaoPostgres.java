@@ -38,10 +38,12 @@ public class MeetingDaoPostgres implements MeetingDao {
 
     @Override
     public int createMeeting(Meeting meeting) {
+        System.out.println(3);
         meeting.setMeetingId(idMaker);
         idMaker++;
         try (Connection conn = ConnectUtil.getConnection()){
-            String sql = "insert into meetings (meeting_id, meeting_date, topic) values (?, ?. ?)";
+            System.out.println(4);
+            String sql = "insert into meetings values (?, ?, ?)";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setInt(1, meeting.getMeetingId());
             ps.setLong(2, meeting.getMeetingDate());

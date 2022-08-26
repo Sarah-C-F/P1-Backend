@@ -20,6 +20,7 @@ public class MeetingServicesImpl implements MeetingServices{
 
     @Override
     public int createMeeting(Meeting meeting) {
+        System.out.println(2);
         return this.meetingDao.createMeeting(meeting);
     }
 }
