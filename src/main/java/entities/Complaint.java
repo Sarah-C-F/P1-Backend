@@ -5,9 +5,11 @@ public class Complaint {
     String firstName;
     String lastName;
     String description;
-    int reviewedBy;
     Level priority = Level.UNASSIGNED;
     int meeting = 0;
+
+    public Complaint() {
+    }
 
     public Complaint(String firstName, String lastName, String description) {
         this.firstName = firstName;
@@ -47,14 +49,6 @@ public class Complaint {
         this.description = description;
     }
 
-    public int getReviewedBy() {
-        return reviewedBy;
-    }
-
-    public void setReviewedBy(int reviewedBy) {
-        this.reviewedBy = reviewedBy;
-    }
-
     public Level getPriority() {
         return priority;
     }
@@ -70,5 +64,17 @@ public class Complaint {
 
     public void setMeeting(int meeting) {
         this.meeting = meeting;
+    }
+
+    @Override
+    public String toString() {
+        return "Complaint{" +
+                "complaintId=" + complaintId +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", description='" + description + '\'' +
+                ", priority=" + priority +
+                ", meeting=" + meeting +
+                '}';
     }
 }

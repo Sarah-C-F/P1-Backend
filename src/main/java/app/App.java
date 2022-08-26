@@ -5,6 +5,7 @@ import daos.meetings.MeetingDao;
 import daos.meetings.MeetingDaoPostgres;
 import daos.registry.RegistryDaoPostgres;
 import handlers.complaints.CreateComplaintHandler;
+import handlers.complaints.GetAllComplaintsHandler;
 import handlers.meetings.CreateMeetingHandler;
 import handlers.meetings.GetAllMeetingsHandler;
 import handlers.registry.GetPersonByLoginHandler;
@@ -31,6 +32,7 @@ public class App {
 
         //Complaint Handlers
         CreateComplaintHandler createComplaintHandler = new CreateComplaintHandler();
+        GetAllComplaintsHandler getAllComplaintsHandler = new GetAllComplaintsHandler();
 
         //Meeting Handlers
         GetAllMeetingsHandler getAllMeetingsHandler = new GetAllMeetingsHandler();
@@ -41,6 +43,7 @@ public class App {
 
         //Call Complaint Handlers
         app.post("/complaints", createComplaintHandler);
+        app.get("/complaints", getAllComplaintsHandler);
 
         //Call Meeting Handlers
         app.get("/meetings", getAllMeetingsHandler);
