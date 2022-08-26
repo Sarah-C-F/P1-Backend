@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="daoTests.RegistryDaoTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-08-26T14:53:03" hostname="JAMES-PC" time="0.497">
+  <properties/>
+  <testcase name="get_person_by_login_test_standard()" classname="daoTests.RegistryDaoTests" time="0.497"/>
+  <system-out><![CDATA[JSmith22RunThisTown!2222
+if1
+JSmith22RunThisTown!RunThisTown!
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
