@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="daoTests.ComplaintDaoTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-08-26T18:48:43" hostname="JAMES-PC" time="0.769">
-  <properties/>
-  <testcase name="create_complaint_test_standard()" classname="daoTests.ComplaintDaoTests" time="0.276"/>
-  <testcase name="get_all_complaints_test_standard()" classname="daoTests.ComplaintDaoTests" time="0.251"/>
-  <testcase name="update_complaint_by_id_test_standard()" classname="daoTests.ComplaintDaoTests" time="0.241"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
