@@ -33,3 +33,12 @@ sonarqube {
     }
 
 }
+task customFatJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'app.App'
+    }
+    baseName = 'P1-Swallow-Falls2'
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}

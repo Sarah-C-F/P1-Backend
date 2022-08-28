@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="servicesTests.RegistryServicesTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-08-28T18:31:01" hostname="JAMES-PC" time="0.024">
+  <properties/>
+  <testcase name="registry_get_person_by_login_service_test_Standard()" classname="servicesTests.RegistryServicesTests" time="0.024"/>
+  <system-out><![CDATA[testtest
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

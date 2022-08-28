@@ -12,7 +12,7 @@ public class ConnectUtil {
 
         try {
 
-            Connection conn = DriverManager.getConnection(System.getenv("AZURE_P1_SQL_JDBC"));
+            Connection conn = DriverManager.getConnection(System.getenv("azure-p1-sql-jdbc"));
 
             return conn;
 
