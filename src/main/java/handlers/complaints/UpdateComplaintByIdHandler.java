@@ -14,6 +14,7 @@ public class UpdateComplaintByIdHandler implements Handler {
         String json = ctx.body();
         Gson gson = new Gson();
         Complaint complaint = gson.fromJson(json, Complaint.class);
+        System.out.println(complaint.getMeeting());
 
         int result = App.complaintService.updateComplaintById(complaintId,complaint.getPriority(),complaint.getMeeting());
 

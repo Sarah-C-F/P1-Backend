@@ -68,12 +68,12 @@ public class ComplaintDaoPostgres implements ComplaintDao{
     }
 
     @Override
-    public int updateComplaintById(int complaintId, Level priority, int meeting) {
+    public int updateComplaintById(int complaintId, Level priority, int meetingId) {
         try (Connection conn = ConnectUtil.getConnection()){
             String sql = "update complaints set priority = ?, meeting = ? where complaint_id = ?";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setObject(1, priority, Types.OTHER);
-            ps.setInt(2, meeting);
+            ps.setInt(2, meetingId);
             ps.setInt(3, complaintId);
 
             ps.execute();
